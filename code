@@ -1,0 +1,46 @@
+int button_pin = 2;
+int button_pil = 3;
+int led_red = 13;
+int ledStatus = 0; 
+
+void setup() {
+  pinMode(13, OUTPUT);
+  pinMode(2, INPUT);
+  pinMode(3, INPUT);
+
+}
+
+void loop() {
+  
+  if (digitalRead(button_pin) == HIGH){
+     if (ledStatus == 0){
+          ledStatus = 1;
+     }
+     if (ledStatus == 1){
+          ledStatus = 0;
+      }
+  } else if (digitalRead(button_pil) == HIGH){
+     if (ledStatus == 0){
+          ledStatus = 1;
+     }
+   if (ledStatus == 1){
+        ledStatus = 0;
+    }
+   }
+
+  if (ledStatus == 1){
+    digitalWrite(led_red, HIGH);
+    }
+
+    else{ 
+    digitalWrite(led_red, LOW);
+    }
+  
+  
+  }
+
+//  digitalWrite(13, HIGH);
+//  delay(1000);
+//  digitalWrite(13, LOW);
+//  delay(1000);
+//}}
